@@ -21,6 +21,12 @@ class ProductsController < ApplicationController
     end
   end
 
+#obtenemos el producto (el el id) para el cuál vamos a mostrar los detalles,
+#tiene HTML
+  def show
+    @product = Product.find(params[:id])
+  end
+
   private
   def product_params
     params.require(:product).permit(:name, :url, :description)
