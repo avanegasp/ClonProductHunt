@@ -1,18 +1,23 @@
-<h1>Acá esta la vista del index</h1>
-
-<table>
-  <tr>
-    <th>Id</th>
-    <th>Name</th>
-    <th>Url</th>
-    <th>Description</th>
-  </tr>
-  <%@Products.each do |product|%>
-  <tr>
-    <th><%=product.id%></th>
-    <th><%=product.name%></th>
-    <th><%=product.url%></th>
-    <th><%=product.description%></th>
-  </tr>
-  <%end%>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Products</h1>
+        <table class="table">
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Url</th>
+            <th>Description</th>
+          </tr>
+          <%@Products.each do |product|%>
+          <tr>
+            <td><%=product.id%></td>
+            <td><%=product.name%></td>
+            <td><%=product.url%></td>
+            <td><%=product.description%></td>
+          </tr>
+          <%end%>
+        </table>
+    </div>
+  </div>
+</div>
