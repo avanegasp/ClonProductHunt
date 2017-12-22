@@ -1,2 +1,18 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<h1>Acá esta la vista del index</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Url</th>
+    <th>Description</th>
+  </tr>
+  <%@Products.each do |product|%>
+  <tr>
+    <th><%=product.id%></th>
+    <th><%=product.name%></th>
+    <th><%=product.url%></th>
+    <th><%=product.description%></th>
+  </tr>
+  <%end%>
+</table>
