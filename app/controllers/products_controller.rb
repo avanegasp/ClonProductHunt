@@ -26,6 +26,12 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
   end
+  
+#es exactamente igual a show, en la vista, va acontener el formulario que nos
+#va a permitir editar un producto (es casí el mismo formulario de new.html.erb)
+  def edit
+    @product = Product.find(params[:id])
+  end
 
   private
   def product_params
