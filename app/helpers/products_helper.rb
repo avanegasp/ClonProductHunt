@@ -1,5 +1,5 @@
 module ProductsHelper
   def form_title
-    @product.new_record? ? "Publicar Producto" : "Modificar Producto"
+    @product.new_record? ? "Nuevo Producto" : "Modificar Producto"
   end
 end
