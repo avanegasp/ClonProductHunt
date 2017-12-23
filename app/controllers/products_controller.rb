@@ -26,13 +26,25 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
   end
-  
+
 #es exactamente igual a show, en la vista, va acontener el formulario que nos
 #va a permitir editar un producto (es casí el mismo formulario de new.html.erb)
   def edit
     @product = Product.find(params[:id])
   end
 
+  #se comienza con la misma línea de show y edit,#ahora se almacena en la BD
+  #si devuelve verdadero, redireccionamos,si devuelve falso que vaya a edit
+  def update
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      redirect_to products_path, notice: "El producto ha sido modificado con éxito"
+    else
+      render :edit
+    end
+  end
+
+#nos permite almacenar la información que nos llega en el formulario
   private
   def product_params
     params.require(:product).permit(:name, :url, :description)
