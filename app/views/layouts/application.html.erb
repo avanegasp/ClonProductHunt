@@ -9,6 +9,11 @@
   </head>
 
   <body>
+    <% if signed_in?%>
+      <div class="">Hola usuario twitter: <%=current_user.twitter_handle%></div>
+      <div class="">Hola usuario: <%=current_user.name%></div>
+    <%end%>
+
     <%if flash[:notice]%>
       <div class="alert alert-info"><%=flash[:notice]%></div>
     <%end%>
