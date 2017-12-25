@@ -15,14 +15,19 @@
             <td><%=link_to product.name, product%></td>
             <td><%=product.url%></td>
             <td><%=product.description%></td>
-            <td><%=link_to "Editar producto", edit_product_path(product) %></td>
-            <td><%=link_to "Eliminar producto", product_path(product), method: :delete, data: {confirm: "Estas seguro de eliminar este producto?"} %></td>
+            <td>
+              <%if signed_in?%>
+                <%=link_to "Editar producto", edit_product_path(product) %></td>
+                  <td><%=link_to "Eliminar producto", product_path(product), method: :delete, data: {confirm: "Estas seguro de eliminar este producto?"}%></td>
+              <%end%>
           </tr>
           <%end%>
         </table>
     </div>
   </div>
-  <div class="text-right">
-    <%=link_to "Publicar producto", new_product_path, class:"btn btn-primary"%>
-  </div>
+  <%if signed_in?%>
+    <div class="text-right">
+      <%=link_to "Publicar producto", new_product_path, class:"btn btn-primary"%>
+    </div>
+  <%end%>
 </div>

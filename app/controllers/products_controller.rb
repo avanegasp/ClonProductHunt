@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :private_access, except: [:index, :show]
+
 #el @ es solo si necesitamos mostrar en una vista
 #tiene HTML
   def index
