@@ -1,5 +1,3 @@
-class Product < ApplicationRecord
-end
 # == Schema Information
 #
 # Table name: products
@@ -12,3 +10,7 @@ end
 #  updated_at  :datetime        not null
 #
 
+class Product < ApplicationRecord
+  validates :name, presence: true
+  validates :url, presence:true
+end
