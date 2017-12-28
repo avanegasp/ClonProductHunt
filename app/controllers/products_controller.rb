@@ -14,8 +14,10 @@ class ProductsController < ApplicationController
 
 #ruta almacena y/o guarda el producto y/o registro en la BD,
 #cuando el usuario llena el formulario en new, no tiene HTML
+#@product.user, viene de product.rb
   def create
     @product = Product.new(product_params)
+    @product.user = current_user
     if @product.save
       redirect_to products_path, notice:"El producto fue publicado con éxito"
     else
