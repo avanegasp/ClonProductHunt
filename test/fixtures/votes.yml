@@ -1,17 +1,20 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product: one
+  user: one
+
+two:
+  product: two
+  user: two
 # == Schema Information
 #
-# Table name: comments
+# Table name: votes
 #
 #  id         :integer         not null, primary key
-#  body       :text
 #  product_id :integer
 #  user_id    :integer
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
 #
 
-class Comment < ApplicationRecord
-  belongs_to :product
-  belongs_to :user
-  
-end
