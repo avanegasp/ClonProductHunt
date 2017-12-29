@@ -27,6 +27,7 @@ class ProductsController < ApplicationController
 
 #obtenemos el producto (el el id) para el cuál vamos a mostrar los detalles,
 #tiene HTML
+#este es el @products de la línea 33 de show.html.erb, se utiliza porque esta anidado
   def show
     @product = Product.find(params[:id])
   end
